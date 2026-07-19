@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="SeqList.vcxproj" Id="192beadc-be94-49f2-82f9-54b8949dd49c" />
+</Solution>
