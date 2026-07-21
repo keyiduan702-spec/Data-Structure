@@ -1,0 +1,30 @@
+﻿#include"SList.h"
+
+void test01()
+{
+	SLTNode* plist = NULL;
+	SLTPushBack(&plist, 1);
+	SLTPushBack(&plist, 2);
+	SLTPushBack(&plist, 3);
+	SLTPushBack(&plist, 4);
+	SLTPrint(plist);
+	SLTPushFront(&plist, 0);
+	SLTPrint(plist);
+	SLTPopBack(&plist);
+	SLTPrint(plist);
+	SLTPopFront(&plist);
+	SLTPrint(plist);
+	SLTNode* find =SLTFind(plist, 3);
+	if (find)
+	{
+		printf("找到了！");
+	}
+	else {
+		printf("没找到！");
+	}
+}
+int main()
+{
+	test01();
+	return 0;
+}

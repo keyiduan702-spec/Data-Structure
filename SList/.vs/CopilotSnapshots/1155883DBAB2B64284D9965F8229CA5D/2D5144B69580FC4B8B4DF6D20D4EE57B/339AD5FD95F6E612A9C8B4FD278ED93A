@@ -1,0 +1,48 @@
+﻿#include"SList.h"
+
+void SLTPrint(SLTNode* phead)
+{
+	SLTNode* pcur = phead;
+	while (pcur)
+	{
+		printf("%d -> ", pcur->data);
+		pcur = phead->next;
+	}
+	printf("NULL\n");
+}
+
+SLTNode* SLTbuyNode(SLDataType x)
+{
+	//创建存储x的结点
+	SLTNode* newnode = (SLTNode*)malloc(sizeof(SLTNode));
+	if (newnode == NULL)
+	{
+		perror("malloc fail!");
+		exit(1);
+	}
+	newnode->data = x;
+	newnode->next = NULL;
+
+	return newnode;
+}
+
+//尾插
+void SLTPushBack(SLTNode** pphead, SLDataType x)
+{
+	assert(pphead);
+	SLTNode* newnode = SLTbuyNode(x);
+	//判断链表是否为空
+	if (*pphead == NULL)
+	{
+		*pphead = newnode;
+	}
+	else {
+		//找尾结点
+		SLTNode* ptail = *pphead;
+		while (ptail->next)
+		{
+			ptail = ptail->next;
+		}
+		ptail->next = newnode;
+	}
+}
